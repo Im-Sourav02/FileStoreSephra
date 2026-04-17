@@ -69,7 +69,7 @@ async def start_command(client: Client, message: Message):
                         InlineKeyboardButton("ᴛᴜᴛᴏʀɪᴀʟ •", url=tutorial_link)
                     ],
                     [
-                        InlineKeyboardButton(" • ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •", url="https://t.me/Premium_Fliix/21")
+                        InlineKeyboardButton(" • ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •", url="https://t.me/Infinix_Adult/27")
                     ]
                 ])
             )
@@ -237,8 +237,8 @@ async def start_command(client: Client, message: Message):
 
         # 8. Auto delete timer
         if messages and client.auto_del > 0:
-            # Create transfer link for getting files again (original base64_string)
-            transfer_link = original_payload
+            # Create transfer link with the raw base64 string to force the shortener ad again
+            transfer_link = base64_string
             
             # Start batch auto delete notification - single notification for all files
             asyncio.create_task(batch_auto_del_notification(
