@@ -1,6 +1,7 @@
 import requests
 import random
 import string
+import base64
 from config import SHORT_URL, SHORT_API, MESSAGES
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
@@ -36,9 +37,21 @@ def get_short(url, client):
         rjson = response.json()
 
         if rjson.get("status") == "success" and response.status_code == 200:
-            short_url = rjson.get("shortenedUrl", url)
-            shortened_urls_cache[url] = short_url
-            return short_url
+            # Get the original shortener link (lksfy.com)
+            original_short_link = rjson.get("shortenedUrl", url)
+            
+            # --- CUSTOM DOMAIN REDIRECT LOGIC ---
+            # 1. Encode the lksfy link to Base64
+            encoded_link = base64.b64encode(original_short_link.encode("utf-8")).decode("utf-8")
+            
+            # 2. Build the new sukuna.site link
+            secure_domain_link = f"https://sukuna.site/?to={encoded_link}"
+            
+            # 3. Save to cache and return the new custom domain link
+            shortened_urls_cache[url] = secure_domain_link
+            return secure_domain_link
+            # ------------------------------------
+            
     except Exception as e:
         print(f"[Shortener Error] {e}")
 
