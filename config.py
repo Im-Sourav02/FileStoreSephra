@@ -14,7 +14,7 @@ SHORT_TUT = "https://t.me/Infinix_Tutorial/10"
 
 # Bot Configuration
 SESSION = "yato"
-TOKEN = "7751221792:AAFJxuTu7PimxOAiA0DWKzmx9RExeyYfiwM"
+TOKEN = "7751221792:AAHewSo14JZu5CKBSfI-qniEdK9j8XFjNuo"
 API_ID = "21446955"
 API_HASH = "e6f34a6186963663342b88b88c2b4750"
 WORKERS = 5
