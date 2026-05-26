@@ -45,10 +45,10 @@ MESSAGES = {
     "ABOUT": "<b><blockquote>◈ ᴏᴡɴᴇʀ : <a href=t.me/Im_Sukuna02>ɪᴍ•Ꮪᴜ͢ᴋᴜɴᴀ</a>\n◈ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ : <a href=https://t.me/InfinixSyndicate>ɪɴғɪɴɪx sʏɴᴅɪᴄᴀᴛᴇ</a>\n◈ ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/Infinix_Movie>ɪɴғɪɴɪx ᴍᴏᴠɪᴇs</a>\n◈ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/Im_Sukuna02>Sᴜᴋᴜɴᴀ</a></blockquote></b>",
     "REPLY": "<b>For More Join - @Infinix_Adult</b>",
     "SHORT_MSG": "<b>📊 ʜᴇʏ {first}, \n\n‼️ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ ɪɴ ᴀ ꜱɪɴɢʟᴇ ʟɪɴᴋ ‼️\n\n ⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ..</b>",
-    "START_PHOTO": "https://i.ibb.co/YBMNRYcV/photo-2025-05-23-09-40-37-7507573799429079152.jpg",
-    "FSUB_PHOTO": "https://i.ibb.co/w8pj89D/photo-2025-05-26-09-47-35-7509204022985752700.jpg",
-    "SHORT_PIC": "https://i.ibb.co/kVQTwH6Z/x.jpg",
-    "SHORT": "https://i.ibb.co/w8pj89D/photo-2025-05-26-09-47-35-7509204022985752700.jpg"
+    "START_PHOTO": "https://i.ibb.co/GvJsGpyL/x.jpg",
+    "FSUB_PHOTO": "https://i.ibb.co/GvJsGpyL/x.jpg",
+    "SHORT_PIC": "https://i.ibb.co/GvJsGpyL/x.jpg",
+    "SHORT": "https://i.ibb.co/GvJsGpyL/x.jpg"
 }
 
 def LOGGER(name: str, client_name: str) -> logging.Logger:
