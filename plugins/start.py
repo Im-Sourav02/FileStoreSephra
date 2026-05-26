@@ -6,6 +6,7 @@ from config import MSG_EFFECT, OWNER_ID
 from plugins.shortner import get_short
 from helper.helper_func import get_messages, force_sub, decode, batch_auto_del_notification
 import asyncio
+import re
 
 #===============================================================#
 
@@ -206,12 +207,30 @@ async def start_command(client: Client, message: Message):
 
         yugen_msgs = []
         for msg in messages:
-            caption = (
+            base_caption = (
                 client.messages.get('CAPTION', '').format(
-                    previouscaption=msg.caption.html if msg.caption else msg.document.file_name
+                    previouscaption=msg.caption.html if msg.caption else (msg.document.file_name if msg.document else "")
                 ) if bool(client.messages.get('CAPTION', '')) and bool(msg.document)
                 else ("" if not msg.caption else msg.caption.html)
             )
+
+            tag = '<a href="https://t.me/VeloraFilms">ʙʏ ɪɴꜰɪɴɪx ᴀᴅᴜʟᴛ</a>'
+            caption = base_caption or ""
+
+            if msg.video or (msg.document and msg.document.mime_type and msg.document.mime_type.startswith("video/")):
+                file_name = getattr(msg.video, "file_name", None) or getattr(msg.document, "file_name", None) or ""
+                quality = ""
+                
+                match = re.search(r"(144p|240p|360p|480p|720p|1080p|1440p|2160p|4k)", file_name, re.IGNORECASE)
+                if match:
+                    quality = match.group(1).lower()
+                elif msg.video and getattr(msg.video, "height", None):
+                    quality = f"{msg.video.height}p"
+
+                if quality:
+                    tag += f" • {quality}"
+
+            caption = f"{caption}\n\n{tag}".strip()
             reply_markup = msg.reply_markup if not client.disable_btn else None
 
             try:
