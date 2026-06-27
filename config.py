@@ -3,7 +3,7 @@ from logging.handlers import RotatingFileHandler
 
 # Bot Configuration
 LOG_FILE_NAME = "bot.log"
-PORT = '5010'
+PORT = 5010
 OWNER_ID = 6123108288
 
 MSG_EFFECT = 5046509860389126442
@@ -14,7 +14,7 @@ SHORT_TUT = "https://t.me/Infinix_Tutorial/10"
 
 # Bot Configuration
 SESSION = "yato"
-TOKEN = "7751221792:AAERWAIjUrhiEIVW-mWzF6v7l3dBLNrez14"
+TOKEN = "642712"
 API_ID = "21446955"
 API_HASH = "e6f34a6186963663342b88b88c2b4750"
 WORKERS = 5
@@ -22,7 +22,7 @@ WORKERS = 5
 DB_URI = "mongodb+srv://souravagarwal14092007:szXRs8g7fErCnn4@cluster0.xlsbf3o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DB_NAME = "Cluster0"
 
-FSUBS = [[-1002345643351, True, 10]] # Force Subscription Channels [channel_id, request_enabled, timer_in_minutes]
+FSUBS = [] # Temporarily disabled so bot can run locally without being an admin in the channel
 # Database Channel (Primary)
 DB_CHANNEL = -1002558171315   # just put channel id dont add ""
 # Multiple Database Channels (can be set via bot settings)

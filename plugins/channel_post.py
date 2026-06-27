@@ -11,25 +11,8 @@ async def channel_post(client: Client, message: Message):
     if message.from_user.id not in client.admins:
         return await message.reply(client.reply_text)
     reply_text = await message.reply_text("Please Wait...!", quote = True)
-    caption = ""
-    if message.video or (message.document and message.document.mime_type and message.document.mime_type.startswith("video/")):
-        file_name = getattr(message.video, "file_name", None) or getattr(message.document, "file_name", None) or ""
-        quality = ""
-        match = re.search(r"(144p|240p|360p|480p|720p|1080p|1440p|2160p|4k)", file_name, re.IGNORECASE)
-        if match:
-            quality = match.group(1).lower()
-        elif message.video and getattr(message.video, "height", None):
-            quality = f"{message.video.height}p"
-
-        if quality:
-            caption = f'<a href="https://t.me/Infinix_Adult/24"><b>{quality} • ʙʏ ɪɴꜰɪɴɪx ᴀᴅᴜʟᴛ</b></a>'
-        else:
-            caption = '<a href="https://t.me/Infinix_Adult/24"><b>ʙʏ ɪɴꜰɪɴɪx ᴀᴅᴜʟᴛ</b></a>'
-    elif message.document or message.photo:
-        caption = '<a href="https://t.me/Infinix_Adult/24"><b>ʙʏ ɪɴꜰɪɴɪx ᴀᴅᴜʟᴛ</b></a>'
-        
     try:
-        post_message = await message.copy(chat_id = client.db, caption=caption, disable_notification=True)
+        post_message = await message.copy(chat_id = client.db, disable_notification=True)
     except FloodWait as e:
         await asyncio.sleep(e.x)
         post_message = await message.copy(chat_id = client.db, caption=caption, disable_notification=True)
