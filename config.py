@@ -47,7 +47,7 @@ MESSAGES = {
     "SHORT_MSG": "<b>📊 ʜᴇʏ {first}, \n\n‼️ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ ɪɴ ᴀ ꜱɪɴɢʟᴇ ʟɪɴᴋ ‼️\n\n ⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ..</b>",
     "START_PHOTO": "https://i.ibb.co/GvJsGpyL/x.jpg",
     "FSUB_PHOTO": "https://i.ibb.co/GvJsGpyL/x.jpg",
-    "SHORT_PIC": "https://i.ibb.co/GvJsGpyL/x.jpg",
+    "SHORT_PIC": "https://i.ibb.co/PvQJn4n2/x.jpg",
     "SHORT": "https://i.ibb.co/GvJsGpyL/x.jpg"
 }
 
