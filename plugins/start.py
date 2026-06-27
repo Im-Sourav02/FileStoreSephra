@@ -6,6 +6,7 @@ from config import MSG_EFFECT, OWNER_ID
 from plugins.shortner import get_short
 from helper.helper_func import get_messages, force_sub, decode, batch_auto_del_notification
 import asyncio
+import re
 
 #===============================================================#
 
@@ -161,7 +162,7 @@ async def start_command(client: Client, message: Message):
             return await message.reply("⚠️ Invalid or expired link.")
 
         # 7. Get messages from the specific source channel first
-        temp_msg = await message.reply("Wait A Sec..")
+        temp_msg = await message.reply("⏳")
         messages = []
 
         try:
@@ -206,12 +207,24 @@ async def start_command(client: Client, message: Message):
 
         yugen_msgs = []
         for msg in messages:
-            caption = (
-                client.messages.get('CAPTION', '').format(
-                    previouscaption=msg.caption.html if msg.caption else msg.document.file_name
-                ) if bool(client.messages.get('CAPTION', '')) and bool(msg.document)
-                else ("" if not msg.caption else msg.caption.html)
-            )
+            if msg.video or (msg.document and msg.document.mime_type and msg.document.mime_type.startswith("video/")):
+                file_name = getattr(msg.video, "file_name", None) or getattr(msg.document, "file_name", None) or ""
+                quality = ""
+                
+                match = re.search(r"(144p|240p|360p|480p|720p|1080p|1440p|2160p|4k)", file_name, re.IGNORECASE)
+                if match:
+                    quality = match.group(1).lower()
+                elif msg.video and getattr(msg.video, "height", None):
+                    quality = f"{msg.video.height}p"
+
+                if quality:
+                    caption = f'<a href="https://t.me/Infinix_Adult/24"><b>{quality} • ʙʏ ɪɴꜰɪɴɪx ᴀᴅᴜʟᴛ</b></a>'
+                else:
+                    caption = '<a href="https://t.me/Infinix_Adult/24"><b>ʙʏ ɪɴꜰɪɴɪx ᴀᴅᴜʟᴛ</b></a>'
+            elif msg.document or msg.photo:
+                caption = '<a href="https://t.me/Infinix_Adult/24"><b>ʙʏ ɪɴꜰɪɴɪx ᴀᴅᴜʟᴛ</b></a>'
+            else:
+                caption = ""
             reply_markup = msg.reply_markup if not client.disable_btn else None
 
             try:
@@ -296,7 +309,7 @@ async def request_command(client: Client, message: Message):
         return
 
     if not is_user_premium: 
-        BUTTON_URL = "https://t.me/hanime_arena/5"
+        BUTTON_URL = "https://t.me/Infinix_Adult/27"
         reply_markup = InlineKeyboardMarkup([
             [InlineKeyboardButton("💎 Upgrade to Premium", url=BUTTON_URL)]
         ])

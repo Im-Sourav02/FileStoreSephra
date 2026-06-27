@@ -14,7 +14,7 @@ SHORT_TUT = "https://t.me/Infinix_Tutorial/10"
 
 # Bot Configuration
 SESSION = "yato"
-TOKEN = "7751221792:AAHewSo14JZu5CKBSfI-qniEdK9j8XFjNuo"
+TOKEN = "7879774851:AAGsYcQ4kERZaB9TxmYX1RjqgGsqH6DdhFY"
 API_ID = "21446955"
 API_HASH = "e6f34a6186963663342b88b88c2b4750"
 WORKERS = 5
@@ -24,7 +24,7 @@ DB_NAME = "Cluster0"
 
 FSUBS = [[-1002345643351, True, 10]] # Force Subscription Channels [channel_id, request_enabled, timer_in_minutes]
 # Database Channel (Primary)
-DB_CHANNEL = -1002558171315   # just put channel id dont add ""
+DB_CHANNEL = -1002624876209   # just put channel id dont add ""
 # Multiple Database Channels (can be set via bot settings)
 # DB_CHANNELS = {
 #     "-1002595092736": {"name": "Primary DB", "is_primary": True, "is_active": True},
@@ -45,10 +45,10 @@ MESSAGES = {
     "ABOUT": "<b><blockquote>◈ ᴏᴡɴᴇʀ : <a href=t.me/Im_Sukuna02>ɪᴍ•Ꮪᴜ͢ᴋᴜɴᴀ</a>\n◈ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ : <a href=https://t.me/InfinixSyndicate>ɪɴғɪɴɪx sʏɴᴅɪᴄᴀᴛᴇ</a>\n◈ ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/Infinix_Movie>ɪɴғɪɴɪx ᴍᴏᴠɪᴇs</a>\n◈ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/Im_Sukuna02>Sᴜᴋᴜɴᴀ</a></blockquote></b>",
     "REPLY": "<b>For More Join - @Infinix_Adult</b>",
     "SHORT_MSG": "<b>📊 ʜᴇʏ {first}, \n\n‼️ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ ɪɴ ᴀ ꜱɪɴɢʟᴇ ʟɪɴᴋ ‼️\n\n ⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ..</b>",
-    "START_PHOTO": "https://i.ibb.co/YBMNRYcV/photo-2025-05-23-09-40-37-7507573799429079152.jpg",
-    "FSUB_PHOTO": "https://i.ibb.co/w8pj89D/photo-2025-05-26-09-47-35-7509204022985752700.jpg",
-    "SHORT_PIC": "https://i.ibb.co/kVQTwH6Z/x.jpg",
-    "SHORT": "https://i.ibb.co/w8pj89D/photo-2025-05-26-09-47-35-7509204022985752700.jpg"
+    "START_PHOTO": "https://i.ibb.co/GvJsGpyL/x.jpg",
+    "FSUB_PHOTO": "https://i.ibb.co/GvJsGpyL/x.jpg",
+    "SHORT_PIC": "https://i.ibb.co/GvJsGpyL/x.jpg",
+    "SHORT": "https://i.ibb.co/GvJsGpyL/x.jpg"
 }
 
 def LOGGER(name: str, client_name: str) -> logging.Logger:

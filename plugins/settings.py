@@ -65,6 +65,7 @@ async def settings_page_2(client, query):
 ›› **ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴛɪᴍᴇʀ:** `{client.auto_del}`
 ›› **ᴘʀᴏᴛᴇᴄᴛ ᴄᴏɴᴛᴇɴᴛ:** `{"✓ ᴛʀᴜᴇ" if client.protect else "✗ ꜰᴀʟsᴇ"}`
 ›› **ᴅɪsᴀʙʟᴇ ʙᴜᴛᴛᴏɴ:** `{"✓ ᴛʀᴜᴇ" if client.disable_btn else "✗ ꜰᴀʟsᴇ"}`
+›› **ɢᴇᴛ ꜰɪʟᴇs ʙᴛɴ:** `{"✓ ᴛʀᴜᴇ" if getattr(client, 'get_files_btn', True) else "✗ ꜰᴀʟsᴇ"}`
 ›› **ʀᴇᴘʟʏ ᴛᴇxᴛ:** `{client.reply_text if client.reply_text else 'ɴᴏɴᴇ'}`
 ›› **ᴀᴅᴍɪɴs:** `{len(client.admins)}`
 ›› **sʜᴏʀᴛɴᴇʀ ᴜʀʟ:** `{getattr(client, 'short_url', 'ɴᴏᴛ sᴇᴛ')}`
@@ -83,6 +84,7 @@ async def settings_page_2(client, query):
     reply_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('ᴘʀᴏᴛᴇᴄᴛ ᴄᴏɴᴛᴇɴᴛ', 'protect'), InlineKeyboardButton('ᴘʜᴏᴛᴏs', 'photos')],
         [InlineKeyboardButton('ᴛᴇxᴛs', 'texts'), InlineKeyboardButton('sʜᴏʀᴛɴᴇʀ', 'shortner')],
+        [InlineKeyboardButton('ɢᴇᴛ ꜰɪʟᴇs ʙᴛɴ', 'toggle_get_files')],
         [InlineKeyboardButton('‹ ᴘʀᴇᴠ', 'settings'), InlineKeyboardButton('ʜᴏᴍᴇ', 'home')]
     ])
     await query.message.edit_text(msg, reply_markup=reply_markup)
@@ -470,7 +472,15 @@ __Use the appropriate button below to add or remove any admin based on your need
 @Client.on_callback_query(filters.regex("^protect$"))
 async def protect(client, query):
     client.protect = False if client.protect else True
-    return await settings(client, query)
+    return await settings_page_2(client, query)
+
+#===============================================================#
+
+@Client.on_callback_query(filters.regex("^toggle_get_files$"))
+async def toggle_get_files(client, query):
+    current = getattr(client, 'get_files_btn', True)
+    client.get_files_btn = not current
+    return await settings_page_2(client, query)
 
 #===============================================================#
 
