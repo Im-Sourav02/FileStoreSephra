@@ -5,7 +5,6 @@ humanize
 psutil
 motor
 markdown
-asyncio
 TgCrypto
 requests
 python-dotenv
