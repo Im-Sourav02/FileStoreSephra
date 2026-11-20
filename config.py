@@ -8,18 +8,21 @@ OWNER_ID = 6123108288
 
 MSG_EFFECT = 5046509860389126442
 
-SHORT_URL = "linkshortify.com" # shortner url 
-SHORT_API = "573350da0e10a5a44f7e6fec3bc2b3f836b47805" 
-SHORT_TUT = "https://t.me/Infinix_Tutorial/10"
+
+load_dotenv()
+
+SHORT_URL = os.getenv("SHORT_URL", "linkshortify.com")
+SHORT_API = os.getenv("SHORT_API")
+SHORT_TUT = os.getenv("SHORT_TUT")
 
 # Bot Configuration
-SESSION = "yato"
-TOKEN = "7751221792:AAGgn8Q38rVTkPy56-STKOSjgIICSRnb2h0"
-API_ID = "21446955"
-API_HASH = "e6f34a6186963663342b88b88c2b4750"
-WORKERS = 5
+SESSION = os.getenv("SESSION", "yato")
+TOKEN = os.getenv("TOKEN")
+API_ID = int(os.getenv("API_ID", "0"))
+API_HASH = os.getenv("API_HASH")
+WORKERS = int(os.getenv("WORKERS", "5"))
 
-DB_URI = "mongodb+srv://souravagarwal14092007:szXRs8g7fErCnn4@cluster0.xlsbf3o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+DB_URI = os.getenv("DB_URI")
 DB_NAME = "Cluster0"
 
 FSUBS = [] # Temporarily disabled so bot can run locally without being an admin in the channel
